@@ -16,18 +16,19 @@ namespace Drupal8Rest
     {
         static void Main(string[] args)
         {
-           var node =  GetDrupalNode<DrupalNodeBase>(3);
-
+           var node7 =  GetDrupalNode<Drupal7NodeBase>(45246, @"http://dev.piazzetta.socialvision.it/dotnetrest", "dotnet", "passworddidotnet");
+           var node8 =  GetDrupalNode<Drupal8NodeBase>(3, @"http://piazzetta8.socialvision.it", "dotnet", "passworddidotnet");
         }
 
-        private static T GetDrupalNode<T>(int nid)
+        private static T GetDrupalNode<T>(int nid, string baseUrl, string user, string password)
         {
-            var jsonResult = WebRequestGetJsonResponse(@"http://piazzetta8.socialvision.it/node/" + nid, "dotnet", "passworddidotnet");
+            var jsonResult = WebRequestGetJsonResponse(baseUrl + "/node/" + nid, user, password);
             var deserializedResult = JsonConvert.DeserializeObject<T>(jsonResult);
             return deserializedResult;
         }
 
-        private static string WebRequestGetJsonResponse(string url, string user, string password)
+
+    private static string WebRequestGetJsonResponse(string url, string user, string password)
         {
             WebRequest req = WebRequest.Create($@"{url}?_format=json");
             req.Method = "GET";

@@ -57,6 +57,7 @@
     <Compile Include="Dp8PathField.cs" />
     <Compile Include="Dp8TextValueField.cs" />
     <Compile Include="Dp8ValueField.cs" />
+    <Compile Include="Drupal7NodeBase.cs" />
     <Compile Include="DrupalNodeBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

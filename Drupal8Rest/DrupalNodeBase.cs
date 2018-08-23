@@ -2,7 +2,7 @@
 
 
 {
-    public class DrupalNodeBase
+    public class Drupal8NodeBase
     {
         public Dp8ValueField[] nid { get; set; }
         public Dp8ValueField[] uuid { get; set; }
